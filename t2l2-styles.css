@@ -1,0 +1,379 @@
+/* FOR TESTING ONLY */
+.container {
+    margin-top: 600px;
+    margin-bottom: 450px;
+}
+
+/* ********************** */
+
+
+
+
+
+/* *********************
+*********************
+GENERAL PAGE STYLES 
+*********************
+********************** */
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.acf-block-hero {
+    display: none;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h1, h2 {
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+@media only screen and (min-width: 992px) {
+    h1 {
+        font-size: 4.5rem;
+    }
+}
+
+/* *********************
+Background SVGs
+********************** */
+.bg-tile {
+    height: 414px;
+    width: 344px;
+    z-index: -1;
+    position: absolute;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg id='a' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 842.51 700.09'%3E%3Cdefs%3E%3Cstyle%3E.c,.d,.e%7Bfill:none;%7D.d%7Bstroke:%23ffbe2f;%7D.d,.e%7Bstroke-width:1.43px;%7D.e%7Bstroke:%23e99b41;%7D.f%7Bclip-path:url(%23b);%7D%3C/style%3E%3CclipPath id='b'%3E%3Crect class='c' width='842.51' height='700.09'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg class='f'%3E%3Cpolygon class='d' points='1.29 519.35 325.62 .71 578.5 .71 265.61 519.35 1.29 519.35'/%3E%3Cpolygon class='e' points='38.79 699.37 363.11 180.74 616 180.74 303.11 699.37 38.79 699.37'/%3E%3Cpolygon class='d' points='264.03 604.36 588.35 85.72 841.24 85.72 528.35 604.36 264.03 604.36'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+@media only screen and (min-width: 768px) {
+    .bg-tile {
+        height: 517px;
+        width: 430px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .bg-tile {
+        height: 646px;
+        width: 536px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .bg-tile {
+        height: 808px;
+        width: 670px;
+    }
+}
+
+.tile-1 {
+    top: 60%;
+    left: 80%;
+}
+
+.tile-2 {
+    top: 40%;
+    right: 85%;
+}
+
+.tile-3 {
+    top: 20%;
+    left: 95%;
+}
+
+
+
+/* *********************
+*********************
+Full-Width Hero
+*********************
+********************** */
+
+h1 {
+    color: white;
+    font-size: 2.75rem;
+}
+
+.t2l-hero .background-img {
+    min-height: 25rem;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentFullWidth-HerowithnoGraphics-Riana-768x512.jpg');
+}
+
+@media only screen and (min-width: 768px) {
+    .t2l-hero .background-img {
+        min-height: 35rem;
+        background-image: url('https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentFullWidth-HerowithnoGraphics-Riana-1024x683.jpg');
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    h1 {
+        font-size: 3.3rem;
+    }
+    .t2l-hero .background-img {
+        background-image: url('https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentFullWidth-HerowithnoGraphics-Riana-2048x1366.jpg');
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    h1 {
+        font-size: 4.25rem;
+    }
+    .t2l-hero .background-img {
+        height: 90vh;
+        min-height: 50rem;
+    }
+}
+
+
+
+/* *********************
+*********************
+Animated Testimonials
+*********************
+********************** */
+
+.testimonial-wrapper {
+    position: relative;
+}
+
+.animated-testimonial {
+    display: grid;
+    gap: 0 2rem;
+}
+
+.img-col {
+    height: 28rem;
+    width: 20rem;
+    margin: 1rem auto;
+}
+
+.img-col img {
+    height: auto;
+    width: 100%;
+    border-radius: 1.25rem 1.25rem 1.25rem 0;
+}
+
+.animated-layout-b img {
+    border-radius: 1.25rem 1.25rem 0 1.25rem;
+}
+
+.animated-text {
+    display: block;
+    color: #FFC62F;
+    text-transform: uppercase;
+    font-size: 2.5rem; 
+    line-height: 1;
+    letter-spacing: 0.15rem;
+    font-weight: 800;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+    
+q {
+    font-family: "abril-text", serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+ .quote-author {
+    color: #c5050c;
+    font-size: 18px;
+    font-weight: 700;
+ }
+
+.major {
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+}
+
+
+
+/* Mobile Layout & Spacing */
+@media only screen and (max-width: 992px) {
+    .animated-text {
+        text-align: center;
+    }
+
+    .animated-quote {
+        margin: 1.25rem;
+    }
+}
+
+
+
+/* Tablet/Desktop Layout & Spacing */
+@media only screen and (min-width: 992px) {
+    .animated-layout-a {
+        grid-template-columns: 2fr 5fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .animated-layout-a .img-col {
+        grid-area: 1 / 1 / 3 / 2;
+    }
+
+    .animated-layout-a .animated-text {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .animated-layout-a .animated-quote {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+    
+    .animated-layout-b {
+        grid-template-columns: 5fr 2fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .animated-layout-b .img-col {
+        grid-area: 1 / 2 / 3 / 3;
+    }
+
+    .animated-layout-b .animated-text {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .animated-layout-b .animated-quote {
+        grid-area: 2 / 1 / 3 / 2;
+        justify-self: end;
+    }
+
+    .img-col {
+        margin: 0;
+        height: 28rem;
+        width: 20rem;
+    }
+
+    .animated-text { 
+        font-size: 4rem;
+        align-self: end;
+    }
+
+    .animated-text-b {
+        text-align: right;
+    }
+
+    .animated-quote {
+        max-width: 60%;
+        align-self: start;
+    }
+}
+
+/* *********************
+ Animation Styles
+ ********************* */
+
+.animated-img, .animated-text, .animated-quote {
+    opacity: 0;
+    transition: transform 1.6s ease-out, opacity 1.4s ease-in;
+}
+
+
+@media only screen and (min-width: 992px) {
+    .animated-text {
+        transition-delay: 0.35s;
+    }
+    
+    .animated-quote {
+        transition-delay: 1.25s;
+    }
+
+    /* Animation for 1st and 3rd testimonials */
+    .animated-img-a, .animated-text-a, .animated-quote-a {
+        transform: translateX(150px);
+    }
+
+
+    /* Animation for 2nd testimonial */
+    .animated-img-b, .animated-text-b, .animated-quote-b {
+        transform: translateX(-150px);
+    }
+}
+
+
+/* General Animation Styles */
+ .fadeIn {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+
+
+/* *********************
+*********************
+Secondary Footer
+*********************
+********************** */
+
+.teal-bg {
+    background-color: #429e8f; /* $teal -- not dark enough for contrast with links */
+    /* background-color: #307064; */
+}
+
+.teal-bg div {
+    padding: 8% 10%;
+}
+
+.t2l-footer-bg-photo h2 {
+    max-width: 63%;
+}
+
+.secondary-footer h2 {
+    color: white;
+}
+
+.secondary-footer .btn-link {
+    color: white;
+    padding: 0.45rem 0;
+    font-size: 18px;
+}
+
+.secondary-footer .btn-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.t2l-footer-bg-photo {
+    background-color: #343a40;
+    border-top-left-radius: 5rem;
+    min-height: 25rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://business.wisc.edu/wp-content/uploads/2021/12/BrandCampaign-LandingPage-HeroB-v2-tiny-png-512x341.jpg");
+ }
+
+ @media only screen and (min-width: 512px) {
+    .t2l-footer-bg-photo {
+        background-image: url("https://business.wisc.edu/wp-content/uploads/2021/12/BrandCampaign-LandingPage-HeroB-v2-tiny-png-768x512.jpg");
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .t2l-footer-bg-photo {
+        background-image: url("https://business.wisc.edu/wp-content/uploads/2021/12/BrandCampaign-LandingPage-HeroB-v2-tiny-png-1024x683.jpg");
+    }
+
+    .teal-bg div {
+        padding: 8%;
+    }
+}

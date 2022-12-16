@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>T2L2 Animations</title>
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="t2l2-styles.css">
+    </head>
+
+    <body>
+        
+            <!-- FULL-WIDTH HERO -->
+            <!-- some styling for this block is built into WP -->
+            <div id="acf-full-width-bg-block_6397ae7cded17" class="t2l-hero alignfull mt-0 mb-6 photo">
+                <div class="background-img alignfull py-5 py-lg-6 px-3 px-lg-6 d-flex flex-column justify-content-end" >
+                    <div class="container">
+                        <div class="full-width-bg-content col-md-8 text-center mx-auto">
+                            <div>
+                                <h1>The Next Generation of Business Leaders.</h1>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+
+        <!-- next line for testing only - DO NOT add to actual WP page -->
+        <div class="container" id="content">
+        <!-- -------------------------------------- -->
+
+
+<!-- ANIMATED TESTIMONIALS -->
+            <div class="testimonial-wrapper">
+                <div class="animated-testimonial animated-layout-a py-4 py-lg-6">
+                    <span class="animated-text animated-text-a">Different Places</span>
+                    <div class="img-col animated-img animated-img-a">
+                        <img width="420" height="615" src="https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentAnimatedTile-Charlie.jpg" class="image-fluid" alt="Charlie" decoding="async" loading="lazy" srcset="https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentAnimatedTile-Charlie.jpg 420w, https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentAnimatedTile-Charlie-350x512.jpg 350w" sizes="(max-width: 420px) 100vw, 420px">
+                    </div>
+                    <figure class="animated-quote animated-quote-a mt-4">
+                        <q>I'm merging politics and finance to bring a different perspective to Wall Street.</q>
+                        <figcaption class="quote-author my-3">Charlie Forbes, BBA 'XX <br> <span class="major">Finance + Political Science</span></figcaption>
+                    </figure>
+                    <svg class="bg-tile tile-1"></svg>
+                </div>
+            </div>
+
+            <div class="testimonial-wrapper">
+                <div class="animated-testimonial animated-layout-b py-4 py-lg-6">
+                    <span class="animated-text animated-text-b">Different Dreams</span>
+                    <div class="img-col animated-img animated-img-b">
+                        <img width="420" height="615" src="https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentAnimatedTile-Avi.jpg" class="image-fluid" alt="Avi" decoding="async" loading="lazy" srcset="https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentAnimatedTile-Avi.jpg 420w, https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentAnimatedTile-Avi-350x512.jpg 350w" sizes="(max-width: 420px) 100vw, 420px">
+                    </div>
+                    <figure class="animated-quote animated-quote-b mt-4">
+                        <q>I am aspiring to be an equity inclusion and belonging champion within a business.</q>
+                        <figcaption class="quote-author my-3">Avi Gomez, MBA 'XX <br> <span class="major">Strategic Human Resources</span></figcaption>
+                    </figure>
+                </div>
+                <svg class="bg-tile tile-2"></svg>
+            </div>
+
+            <div class="testimonial-wrapper">
+                <div class="animated-testimonial animated-layout-a py-4 py-lg-6">
+                    <span class="animated-text animated-text-a">Different Purposes</span>
+                    <div class="img-col animated-img animated-img-a">
+                        <img width="420" height="615" src="https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentAnimatedTile-Yueron.jpg" class="image-fluid" alt="Yueron" decoding="async" loading="lazy" srcset="https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentAnimatedTile-Yueron.jpg 420w, https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentAnimatedTile-Yueron-350x512.jpg 350w" sizes="(max-width: 420px) 100vw, 420px">
+                    </div>
+                    <figure class="animated-quote animated-quote-a mt-4">
+                        <q>I am looking beyond differences to common goals that unite us in business.</q>
+                        <figcaption class="quote-author my-3">Yueran Zhao, BBA 'XX <br> <span class="major">Marketing, Supply Chain, Human Resources</span></figcaption>
+                    </figure>
+                </div>
+                <svg class="bg-tile tile-3"></svg>
+            </div>
+
+
+        <!-- next line for testing only - DO NOT add to actual WP page -->
+        </div>
+        <!-- -------------------------------------- -->
+
+
+<!-- SECONDARY FOOTER -->
+        <div class="secondary-footer alignfull">
+            <div class="row teal-bg">
+                <div class="col-lg-6">
+                    <h2>Be Part of the Next Generation of Business Leaders</h2>
+                    <a class="btn btn-link" href="/undergraduate">Undergraduate (BBA)</a>
+                    <a class="btn btn-link" href="/graduate/masters">Masters</a>
+                    <a class="btn btn-link" href="/graduate/mba">MBA</a>
+                </div>
+                <div class="col-lg-6 t2l-footer-bg-photo">
+                    <h2 class="t2l-footer-heading">See How our Alumni are Shaping the Future of Business</h2>
+                    <a class="btn btn-primary" href="/trusted-to-lead">Trusted to Lead</a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- Script Text Animation -->
+    <script>
+        const animatedTestimonials = document.querySelectorAll('.animated-img, .animated-text, .animated-quote');
+        
+        const options = {
+            root: null,
+            threshold: 0.5, // don't change! higher numbers break mobile animation
+            rootMargin: "0px"
+        };
+        
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if(!entry.isIntersecting) {
+                    return;
+                };
+                console.log(entry.target);
+                entry.target.classList.toggle('fadeIn');
+                observer.unobserve(entry.target);
+            });
+        } , options);
+        
+        animatedTestimonials.forEach(animatedTestimonial => {
+            observer.observe(animatedTestimonial);
+        });
+        
+    </script>  
+
+</html>

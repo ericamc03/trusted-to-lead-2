@@ -367,6 +367,10 @@ Full-width BG Images w/ Quotes
          color: #ffd946; /* $yellow */
     }
 
+    .acf-block-full-width-bg a::after {
+        content: " \00BB";
+    }
+
     .acf-block-full-width-bg .major {
         color: white;
     }

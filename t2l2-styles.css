@@ -1,4 +1,4 @@
-/* FOR TESTING ONLY */
+/* FOR TESTING CODE LOCALLY ONLY (don't add to WP page) */
 .container {
     margin-top: 100px;
     margin-bottom: 450px;
@@ -8,8 +8,13 @@
     margin-bottom: 10rem;
 }
 
-/* ********************** */
+body {
+    overflow-x: hidden;
+}
 
+.profile-listing-wrapper .card {
+    background-color: transparent;
+}
 
 
 
@@ -26,15 +31,10 @@ html {
 
 body {
     margin: 0;
-    overflow-x: hidden;
 }
 
 .acf-block-hero {
     display: none;
-}
-
-h1 {
-    font-size: 3.5rem;
 }
 
 h1, h2 {
@@ -43,15 +43,16 @@ h1, h2 {
     text-transform: uppercase;
 }
 
-@media only screen and (min-width: 992px) {
-    h1 {
-        font-size: 4.5rem;
-    }
-}
+
 
 /* *********************
 Background SVG Tiles
 ********************** */
+
+.testimonial-wrapper, .profile-listing-wrapper, .secondary-footer { 
+    position: relative;
+}
+
 .bg-tile {
     height: 414px;
     width: 344px;
@@ -62,26 +63,12 @@ Background SVG Tiles
     background-image: url("data:image/svg+xml,%3Csvg id='a' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 842.51 700.09'%3E%3Cdefs%3E%3Cstyle%3E.c,.d,.e%7Bfill:none;%7D.d%7Bstroke:%23ffbe2f;%7D.d,.e%7Bstroke-width:1.43px;%7D.e%7Bstroke:%23e99b41;%7D.f%7Bclip-path:url(%23b);%7D%3C/style%3E%3CclipPath id='b'%3E%3Crect class='c' width='842.51' height='700.09'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg class='f'%3E%3Cpolygon class='d' points='1.29 519.35 325.62 .71 578.5 .71 265.61 519.35 1.29 519.35'/%3E%3Cpolygon class='e' points='38.79 699.37 363.11 180.74 616 180.74 303.11 699.37 38.79 699.37'/%3E%3Cpolygon class='d' points='264.03 604.36 588.35 85.72 841.24 85.72 528.35 604.36 264.03 604.36'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-@media only screen and (min-width: 768px) {
-    .bg-tile {
-        height: 517px;
-        width: 430px;
+/* HIDE ALL TILES for MOBILE? 
+@media only screen and (max-width: 768px) {
+    .bg-tile { 
+        display: none;
     }
-}
-
-@media only screen and (min-width: 992px) {
-    .bg-tile {
-        height: 646px;
-        width: 536px;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    .bg-tile {
-        height: 808px;
-        width: 670px;
-    }
-}
+} */
 
 .tile-1 {
     top: 60%;
@@ -99,24 +86,102 @@ Background SVG Tiles
 }
 
 .tile-4 {
+    top: 10%;
+    right: 90%;
+}
+
+.tile-5 {
+    top: 62%;
+    right: -60%;
+}
+
+.tile-6 {
+    top: -5%;
+    right: -75%;
+}
+
+.tile-7 {
+    top: 42%;
+    right: 87%;
+}
+
+.tile-8 {
+    top: -2%;
+    right: -65%;
+}
+
+ .tile-9 {
     bottom: 55%;
     left: -45%;
     z-index: 1;
-}
+} 
 
 @media only screen and (min-width: 768px) {
-    .tile-4 {
+    .bg-tile {
+        height: 517px;
+        width: 430px;
+    }
+
+    .tile-6 {
+         right: -43%;
+    }
+
+    .tile-9 {
         bottom: 63%;
         left: -20%;
     }
 }
 
 @media only screen and (min-width: 992px) {
-    .tile-4 {
-        bottom: 25%;
+    .bg-tile {
+        height: 646px;
+        width: 536px;
+    }
+
+    .tile-6 {
+        right: -50%;
+    }
+
+    .tile-8 {
+        right: -50%;
+    }
+
+    .tile-9 {
+        bottom: 0%;
+        left: -30%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .bg-tile {
+        height: 808px;
+        width: 670px;
+    }
+
+    .tile-6 {
+        right: -60%;
+    }
+
+    .tile-9 {
+        height: 727px;
+        width: 608px;
+        bottom: 0%;
+        left: -25%;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .tile-6 {
+        right: -65%;
+        top: 2%;
+    }
+    
+    .tile-9 {
+        bottom: 15%;
         left: -15%;
     }
 }
+
 
 
 /* *********************
@@ -132,6 +197,7 @@ h1 {
 
 .t2l-hero .background-img {
     min-height: 32rem;
+    background-color: #307064;
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -171,10 +237,6 @@ h1 {
 Animated Testimonials
 *********************
 ********************** */
-
-.testimonial-wrapper {
-    position: relative;
-}
 
 .animated-testimonial {
     display: grid;
@@ -233,6 +295,12 @@ figcaption {
 
 
 /* Mobile Layout & Spacing */
+@media only screen and (max-width: 768px) {
+    .animated-quote {
+        margin: 1.25rem auto;
+    }
+}
+
 @media only screen and (max-width: 992px) {
     .animated-testimonial .large-animated-text {
         text-align: center;
@@ -319,7 +387,7 @@ figcaption {
     }
     
     .animated-quote {
-        transition-delay: 1.25s;
+        transition-delay: 1.5s;
     }
 
     /* Animation for 1st and 3rd testimonials */
@@ -332,13 +400,38 @@ figcaption {
     .animated-img-b, .animated-text-b, .animated-quote-b {
         transform: translateX(-150px);
     }
+
+    @media (prefers-reduced-motion) {
+        .animated-img-a, .animated-text-a, .animated-quote-a, .animated-img-b, .animated-text-b, 
+        .animated-quote-b {
+            transform: translateX(0px);
+            transition-delay: 0s;
+        }
+    }
 }
 
 
-/* General Animation Styles */
+/* General Testimonial Animation Styles */
  .fadeIn {
     opacity: 1;
     transform: translateX(0px);
+}
+
+
+
+
+/* *********************
+*********************
+Video Testimonial
+*********************
+********************** */
+
+.acf-block-video-testimonial h2 {
+    margin-bottom: 3rem !important;
+}
+
+.acf-block-video-testimonial .swiper-container-top {
+    padding-top: 3rem !important;
 }
 
 
@@ -354,8 +447,13 @@ Full-width BG Images w/ Quotes
     color: #c5050c;
 }
 
+.acf-block-full-width-bg a::after {
+    content: " \00BB";
+}
+
 .acf-block-full-width-bg .background-img {
     background-position: top center;
+    background-color: #307064;
 }
 
 @media only screen and (min-width: 768px) {
@@ -365,10 +463,6 @@ Full-width BG Images w/ Quotes
 
     .acf-block-full-width-bg a {
          color: #ffd946; /* $yellow */
-    }
-
-    .acf-block-full-width-bg a::after {
-        content: " \00BB";
     }
 
     .acf-block-full-width-bg .major {
@@ -409,31 +503,28 @@ Secondary Footer
 *********************
 ********************** */
 
-.secondary-footer {
-    position: relative;
-}
-
 .teal-bg {
-    /* background-color: #429e8f; */ /* $teal -- not dark enough for contrast with links */
     background-color: #307064;
 }
 
 .teal-bg div {
-    padding: 8% 10%;
-}
-
-.t2l-footer-bg-photo h2 {
-    max-width: 63%;
+    padding: 10%;
 }
 
 .secondary-footer h2 {
     color: white;
 }
 
+.t2l-footer-bg-photo h2 {
+    max-width: 62%;
+}
+
 .secondary-footer .btn-link {
     color: white;
     padding: 0.45rem 0;
     font-size: 18px;
+    position: relative; /* required for z-index to work here */
+    z-index: 2;
 }
 
 .secondary-footer .btn-link:hover {

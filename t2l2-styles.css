@@ -18,9 +18,7 @@ body {
 
 
 
-
-
-
+    
 /* *********************
 *********************
 GENERAL PAGE STYLES 
@@ -89,36 +87,38 @@ Background SVG Tiles
     right: 60%;
 }
 
-/* TO DO: FINESSE PLACEMENT OF CJ TILES WHEN NEW MOBILE PHOTO IS ADDED */
+/* Tiles 5 & 6 overlap CJ photo on mobile */
 .tile-5 {
     top: 100%;
-    right: -40%;
+    left: -57%;
 }
 
 .tile-6 {
-    top: -5%;
-    left: -40%;
+    top: -7%;
+    right: -47%;
 }
 
+
+/* Tiles 7 & 8 overlap Avi photo on mobile */
 .tile-7 {
     top: 101%;
-    right: 55%;
+    right: 57%;
 }
 
 .tile-8 {
     top: -7%;
-    right: -35%;
+    right: -50%;
 }
 
-/* TO DO: FINESSE PLACEMENT OF SAM TILES WHEN NEW MOBILE PHOTO IS ADDED */
+/* Tiles 9 & 10 overlap Sam photo on mobile */
  .tile-9 {
-    top: 100%;
-    left: 55%;
+    top: 101%;
+    right: 55%;
 } 
 
 .tile-10 {
-    bottom: 100%;
-    left: -35%;
+    bottom: 96%;
+    right: -55%;
 } 
 
 .tile-11 {
@@ -290,13 +290,13 @@ h1 {
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-LandingPageHero-Riyana-768x512.jpg'); 
+    background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-LandingPageHero-RiyanaNew-768x512.jpg'); 
 }
 
 @media only screen and (min-width: 768px) {
     .t2l-hero .background-img {
         min-height: 35rem;
-        background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-LandingPageHero-Riyana-1024x683.jpg');
+        background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-LandingPageHero-RiyanaNew-1024x683.jpg');
     }
 }
 
@@ -306,17 +306,14 @@ h1 {
     }
 
     .t2l-hero .background-img {
-        background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-LandingPageHero-Riyana-2048x1365.jpg');
+        background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-LandingPageHero-RiyanaNew-2048x1365.jpg');
+        height: calc(100vh - 120px);
     }
 }
 
 @media only screen and (min-width: 1200px) {
     h1 {
         font-size: 4.25rem;
-    }
-    .t2l-hero .background-img {
-        height: 90vh;
-        min-height: 50rem;
     }
 }
 
@@ -379,7 +376,7 @@ figcaption {
 
 .major {
     font-size: 1rem;
-    color: black;
+    color: #282728;
 }
 
 
@@ -465,7 +462,7 @@ figcaption {
  Animation Styles
  ********************* */
 
-.animated-img, .large-animated-text, .animated-quote, .avi {
+.animated-img, .large-animated-text, .animated-quote {
     opacity: 0;
     transition: transform 1.6s ease-out, opacity 1.4s ease-in-out;
 }
@@ -477,7 +474,7 @@ figcaption {
     }
 
     .animated-quote {
-         transition-delay: 1.5s;
+         transition-delay: 0.75s;
     }
 
     /* Animation for 1st and 3rd testimonials */
@@ -525,23 +522,20 @@ Lazy Load Video
     }
 }
 
+@media only screen and (min-width: 1400px) {
+    .acf-block-youtube-lazy-load .section-paragraph {
+        max-width: 50vw;
+    }
+}
+
 /* *********************
 *********************
-Video Testimonial
+Video Testimonials
 *********************
 ********************** */
 
-.acf-block-video-testimonial h2 {
-    margin-bottom: 3rem !important;
-}
-
-.acf-block-video-testimonial .swiper-container-top {
-    padding-top: 3rem !important;
-}
-
 .acf-block-video-testimonial .swiper-thumbnail-label {
-    font-weight: 600;
-    line-height: 1.4 !important;
+    /* font-weight: 600; */
 }
 
 .acf-block-video-testimonial .card-title {
@@ -573,27 +567,34 @@ Full-width BG Images w/ Quotes
 *********************
 ********************** */
 
-/* TESTING ANIMATION ON MOBILE PHOTO */ 
-/* TO DO: ADD FOR CJ and SAM or REMOVE IF NO LONGER ANIMATING MOBILE IMG */
-.FWFadeIn {
-    opacity: 1;
-}
 
 .acf-block-full-width-bg .background-img.parallax {
     background-position: top center;
 }
 
+/* VERTICAL IMAGES FOR MOBILE ONLY */
+
 .background-img.avi {
-        background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/UWSoB_AviGomez3281-Edit-a-1025x1536.jpg') !important;
+        background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-AviGomez-FullWidth-Mobile.jpg') !important;
     }
 
 .background-img.cj {
-       background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/UWSoB_CJWilkerson2565-Edit-1025x1536.jpg') !important;
+       background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-CJWilkerson-FullWidth-Mobile.jpg') !important;
 } 
 
-/* .background-img.sam {
-       TO DO: ADD SAM MOBILE IMAGE HERE
-} */
+.background-img.sam {
+       background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-SamKomisar-FullWidth-Mobile.jpg') !important;
+}
+
+
+
+.acf-block-full-width-bg.featured-student .quote-author, .acf-block-full-width-bg.featured-student .white-text, .acf-block-full-width-bg.featured-student .major {
+      color: white;
+}
+
+.acf-block-full-width-bg.featured-student a {
+     color: #ffd946; /* $yellow */
+}
 
 .acf-block-full-width-bg .btn-link:hover {
     text-decoration: underline;
@@ -603,31 +604,18 @@ Full-width BG Images w/ Quotes
         content: " \00BB";
 }
 
-.acf-block-full-width-bg .background-img.avi, .acf-block-full-width-bg .background-img.cj { 
-     height: 45rem; /* TO DO: ADD SAM & FIGURE OUT GOOD HEIGHT FOR TABLET/DESKTOP */
+.acf-block-full-width-bg.featured-student .background-img { 
+     height: 45rem;
 }
 
 @media only screen and (max-width: 768px) {
     .acf-block-full-width-bg.featured-student .container { 
-         padding-bottom: 7% !important;
+         padding-bottom: 4% !important;
      }
-
-     .acf-block-full-width-bg a { /* TO DO: REMOVE IF TEXT STAYS ON IMAGE FOR MOBILE */
-         color: #c5050c;
-     }
-
-     .acf-block-full-width-bg .avi .quote-author, .avi .white-text, .avi .major, .cj .quote-author, .cj .white-text, .cj .major { /* TO DO: ADD SAM HERE */
-          color: white; /* $yellow doesn't work for link with her shirt on mobile */
-          text-shadow: 1px 1px 4px black /* gray #282728; */
-     }
-
-     .acf-block-full-width-bg .avi a, .acf-block-full-width-bg .avi .quote-author, .acf-block-full-width-bg .cj a, .acf-block-full-width-bg .cj .quote-author { /* TO DO: ADD SAM HERE */
-          color: #ffd946; /* $yellow */
-     }
-
 
      .acf-block-full-width-bg.featured-student q { 
          font-size: 2rem;
+         text-shadow: 1px 1px 4px #494949;
      }
 
      .acf-block-full-width-bg.featured-student .quote-author { 
@@ -636,10 +624,6 @@ Full-width BG Images w/ Quotes
 
      .acf-block-full-width-bg.featured-student .major { 
          font-size: 1.2rem;
-     }
-
-     .btn-outline-light {
-         text-shadow: none;
      }
 }
 
@@ -648,40 +632,45 @@ Full-width BG Images w/ Quotes
         background-color: #307064;
     }
 
+
+    /* HORIZONTAL IMAGES FOR TABLET/DESKTOP */
     .background-img.avi {
-        background-image: url('https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentFullWidth-Avi-2048x1366.jpg') !important;
+        background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-AviGomez-FullWidthNew-2048x1365.jpg') !important;
     }
 
     .background-img.cj { 
-        background-image: url('https://business.wisc.edu/wp-content/uploads/2022/12/T2L2-StudentFullWidth-CJ-2048x1366.jpg') !important;
-    } 
+        background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-CJWilkerson-FullWidthNew-2048x1365.jpg') !important;
+    }
 
-    /* .background-img.sam { TO DO: ADD SAM DESKTOP IMAGE HERE
-        background-image: url('') !important;
-    } */
+    .background-img.sam {
+        background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-SamKomisar-FullWidthNew-2048x1365.jpg') !important;
+    }
 
     .acf-block-full-width-bg q {
-        font-size: 2.25rem;
+        font-size: 2rem;
     }
 
      .acf-block-full-width-bg.featured-student .quote-author { 
          font-size: 1.4rem;
      }
 
-     .acf-block-full-width-bg.featured-student .major { 
-         font-size: 1.2rem;
-     }
 
     .acf-block-full-width-bg .container.d-flex .full-width-bg-content {
         max-width: 33vw;
     }
 
-    .acf-block-full-width-bg.featured-student .quote-author, .acf-block-full-width-bg.featured-student .quote-author a, .acf-block-full-width-bg.featured-student a:not(.btn-outline-light)  {
-         color: #ffd946; /* $yellow */
-    }
+
+    /* Spacing for text on CJ and Sam's full-width image */
+    /* .acf-block-full-width-bg .cj .container.justify-content-md-end .full-width-bg-content {
+        padding-left: calc(0.5rem + 1vw);
+    } */
+
+    .acf-block-full-width-bg .sam .container.justify-content-md-end .full-width-bg-content {
+        padding-left: calc(0.5rem + 4vw);
+    } 
 
     .acf-block-full-width-bg .major {
-        color: white;
+        font-size: 1.2rem;
     }
 }
 
@@ -696,9 +685,14 @@ Full-width BG Images w/ Quotes
     }
 
     /* Spacing for text on CJ and Sam's full-width image */
-    .acf-block-full-width-bg .container.justify-content-md-end .full-width-bg-content {
+    .acf-block-full-width-bg .cj .container.justify-content-md-end .full-width-bg-content {
         padding-left: calc(0.5rem + 1vw);
         max-width: 38vw;
+    } 
+
+    .acf-block-full-width-bg .sam .container.justify-content-md-end .full-width-bg-content {
+        padding-left: calc(0.25rem + 8vw);
+        max-width: 42vw;
     } 
 }
 
@@ -710,22 +704,51 @@ Full-width BG Images w/ Quotes
     .acf-block-full-width-bg .container.d-flex .full-width-bg-content {
         max-width: 30vw;
     }
+
+    .acf-block-full-width-bg .container.justify-content-md-end .full-width-bg-content {
+        max-width: 35vw;
+    } 
+
+    /* Spacing for text on Sam's full-width image */
+    .acf-block-full-width-bg .sam .container.justify-content-md-end .full-width-bg-content {
+        padding-left: calc(2rem + 6vw);
+        max-width: 38vw;
+    }
    
     .acf-block-full-width-bg q {
         font-size: 3rem;
     }
 
-    /* Width of text on CJ and Sam's full-width image */
-    .acf-block-full-width-bg .container.justify-content-md-end .full-width-bg-content {
-        max-width: 38vw;
-    }
 }
 
 @media only screen and (min-width: 1400px) {
     /* Spacing for text on CJ and Sam's full-width image */
     .acf-block-full-width-bg .container.justify-content-md-end .full-width-bg-content {
-        padding-left: calc(2rem + 1vw);
+        padding-left: calc(3rem + 6vw);
     }
+}
+
+@media only screen and (min-width: 1600px) {
+    /* Spacing for text on CJ and Sam's full-width image */
+    .acf-block-full-width-bg .cj .container.justify-content-md-end .full-width-bg-content {
+        padding-left: calc(4rem + 3vw);
+    }    
+
+    .acf-block-full-width-bg .sam .container.justify-content-md-end .full-width-bg-content {
+        padding-left: calc(4rem + 8vw);
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    /* Spacing for text on CJ and Sam's full-width image */
+    .acf-block-full-width-bg .cj .container.justify-content-md-end .full-width-bg-content {
+        padding-left: calc(6rem + 3vw);
+    }
+
+    .acf-block-full-width-bg .sam .container.justify-content-md-end .full-width-bg-content {
+        padding-left: calc(7rem + 8vw);
+    }
+    
 }
 
 

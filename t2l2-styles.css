@@ -19,6 +19,13 @@ body {
 
 
     
+/* Updated 1/30/23
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* *********************
 *********************
 GENERAL PAGE STYLES 
@@ -122,8 +129,8 @@ Background SVG Tiles
 } 
 
 .tile-11 {
-    bottom: 60%;
-    left: -35%;
+    bottom: 68%;
+    left: -50%;
     z-index: 1;
 } 
 }
@@ -247,8 +254,15 @@ Background SVG Tiles
     }
 
     .tile-11 {
-        bottom: 0%;
-        left: -30%;
+        bottom: -18%;
+        left: -34%;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .tile-11 {
+        bottom: -8%;
+        left: -23%;
     }
 }
 
@@ -268,8 +282,16 @@ Background SVG Tiles
     }
     
     .tile-11 {
-        bottom: 15%;
-        left: -15%;
+        bottom: 2%;
+        left: -23%;
+    }
+}
+
+
+@media only screen and (min-width: 1800px) {
+    .tile-11 {
+        bottom: 12%;
+        left: -19%;
     }
 }
 
@@ -326,6 +348,7 @@ Animated Testimonials
 ********************** */
 
 .animated-testimonial {
+    display: -ms-grid;
     display: grid;
     gap: 0 2rem;
 }
@@ -403,38 +426,103 @@ figcaption {
 
 @media only screen and (min-width: 992px) {
     .animated-layout-a {
+        -ms-grid-columns: 2fr 5fr;
         grid-template-columns: 2fr 5fr;
+        -ms-grid-rows: 1fr 2fr;
         grid-template-rows: 1fr 2fr;
+    }
+    .animated-layout-a > *:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    .animated-layout-a > *:nth-child(2) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+    }
+    .animated-layout-a > *:nth-child(3) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+    }
+    .animated-layout-a > *:nth-child(4) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
     }
 
     .animated-layout-a .img-col {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 2;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
         grid-area: 1 / 1 / 3 / 2;
     }
 
     .animated-layout-a .large-animated-text {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
         grid-area: 1 / 2 / 2 / 3;
     }
 
     .animated-layout-a .animated-quote {
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
         grid-area: 2 / 2 / 3 / 3;
     }
     
     .animated-layout-b {
+        -ms-grid-columns: 5fr 2fr;
         grid-template-columns: 5fr 2fr;
+        -ms-grid-rows: 1fr 2fr;
         grid-template-rows: 1fr 2fr;
+    }
+    
+    .animated-layout-b > *:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    
+    .animated-layout-b > *:nth-child(2) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+    }
+    
+    .animated-layout-b > *:nth-child(3) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+    }
+    
+    .animated-layout-b > *:nth-child(4) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
     }
 
     .animated-layout-b .img-col {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 2;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
         grid-area: 1 / 2 / 3 / 3;
     }
 
     .animated-layout-b .large-animated-text {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
         grid-area: 1 / 1 / 2 / 2;
     }
 
     .animated-layout-b .animated-quote {
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
         grid-area: 2 / 1 / 3 / 2;
-        justify-self: end;
+        -ms-grid-column-align: end;
+            justify-self: end;
     }
 
     .img-col {
@@ -445,7 +533,9 @@ figcaption {
 
     .animated-testimonial .large-animated-text { 
         font-size: 4rem;
-        align-self: end;
+        -ms-flex-item-align: end;
+            -ms-grid-row-align: end;
+            align-self: end;
     }
 
     .animated-text-b {
@@ -454,7 +544,9 @@ figcaption {
 
     .animated-quote {
         max-width: 60%;
-        align-self: start;
+        -ms-flex-item-align: start;
+            -ms-grid-row-align: start;
+            align-self: start;
     }
 }
 
@@ -464,34 +556,50 @@ figcaption {
 
 .animated-img, .large-animated-text, .animated-quote {
     opacity: 0;
+    -webkit-transition: opacity 1.4s ease-in-out, -webkit-transform 1.6s ease-out;
+    transition: opacity 1.4s ease-in-out, -webkit-transform 1.6s ease-out;
+    -o-transition: transform 1.6s ease-out, opacity 1.4s ease-in-out;
     transition: transform 1.6s ease-out, opacity 1.4s ease-in-out;
+    transition: transform 1.6s ease-out, opacity 1.4s ease-in-out, -webkit-transform 1.6s ease-out;
 }
 
 
 @media only screen and (min-width: 992px) {
     .large-animated-text {
-        transition-delay: 0.35s;
+        -webkit-transition-delay: 0.35s;
+             -o-transition-delay: 0.35s;
+                transition-delay: 0.35s;
     }
 
     .animated-quote {
-         transition-delay: 0.75s;
+         -webkit-transition-delay: 0.75s;
+              -o-transition-delay: 0.75s;
+                 transition-delay: 0.75s;
     }
 
     /* Animation for 1st and 3rd testimonials */
     .animated-img-a, .animated-text-a, .animated-quote-a {
-        transform: translateX(150px);
+        -webkit-transform: translateX(150px);
+            -ms-transform: translateX(150px);
+                transform: translateX(150px);
     }
 
 
     /* Animation for 2nd testimonial */
     .animated-img-b, .animated-text-b, .animated-quote-b {
-        transform: translateX(-150px);
+        -webkit-transform: translateX(-150px);
+            -ms-transform: translateX(-150px);
+                transform: translateX(-150px);
     }
 
     @media (prefers-reduced-motion) {
         .animated-img-a, .animated-text-a, .animated-quote-a, .animated-img-b, .animated-text-b, .animated-quote-b {
-            transform: translateX(0px);
-            transition-delay: 0s;
+            -webkit-transform: translateX(0px);
+                -ms-transform: translateX(0px);
+                    transform: translateX(0px);
+            -webkit-transition-delay: 0s;
+                 -o-transition-delay: 0s;
+                    transition-delay: 0s;
         }
     }
 }
@@ -500,7 +608,9 @@ figcaption {
 /* General Testimonial Animation Styles */
  .fadeIn {
     opacity: 1;
-    transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+            transform: translateX(0px);
 }
 
 
@@ -579,7 +689,7 @@ Full-width BG Images w/ Quotes
     }
 
 .background-img.cj {
-       background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-CJWilkerson-FullWidth-Mobile.jpg') !important;
+       background-image: url('https://business.wisc.edu/wp-content/uploads/2023/01/T2L-CJWilkerson-FullWidth-MobileNew.jpg') !important;
 } 
 
 .background-img.sam {
@@ -615,7 +725,6 @@ Full-width BG Images w/ Quotes
 
      .acf-block-full-width-bg.featured-student q { 
          font-size: 2rem;
-         text-shadow: 1px 1px 4px #494949;
      }
 
      .acf-block-full-width-bg.featured-student .quote-author { 
@@ -759,7 +868,10 @@ Secondary Footer
 ********************** */
 
 .teal-bg {
-    background-color: #307064; 
+    background-color: #307064;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 27.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 1152 1152' style='enable-background:new 0 0 1152 1152;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bopacity:0.54;clip-path:url(%23XMLID_00000061463905027548751050000016538202802729311665_);%7D .st1%7Bfill:url(%23SVGID_1_);%7D .st2%7Bfill:url(%23SVGID_00000100378660838691498630000010683296269463296134_);%7D .st3%7Bfill:url(%23SVGID_00000084517041424475082500000010069752303178832001_);%7D .st4%7Bfill:url(%23SVGID_00000013194745776563195100000016728313474867206077_);%7D%0A%3C/style%3E%3Cg%3E%3Cdefs%3E%3Crect id='XMLID_00000098939241368436435750000014100466357590600599_' x='-1.6706' y='-1.5369' width='1153.0862' height='1152.4475'/%3E%3C/defs%3E%3Cuse xlink:href='%23XMLID_00000098939241368436435750000014100466357590600599_' style='overflow:visible;fill:%23307064;'/%3E%3CclipPath id='XMLID_00000130636131763556907400000011548885918819247282_'%3E%3Cuse xlink:href='%23XMLID_00000098939241368436435750000014100466357590600599_' style='overflow:visible;'/%3E%3C/clipPath%3E%3Cg style='opacity:0.54;clip-path:url(%23XMLID_00000130636131763556907400000011548885918819247282_);'%3E%3ClinearGradient id='SVGID_1_' gradientUnits='userSpaceOnUse' x1='-648.3007' y1='113.8186' x2='575.9271' y2='113.8186' gradientTransform='matrix(1 0 0 -1 0 1207.8889)'%3E%3Cstop offset='0' style='stop-color:%23FFFFFF'/%3E%3Cstop offset='0.0104' style='stop-color:%23F5F8F7'/%3E%3Cstop offset='0.0668' style='stop-color:%23C1D4D1'/%3E%3Cstop offset='0.1242' style='stop-color:%2395B5AF'/%3E%3Cstop offset='0.1815' style='stop-color:%23709C94'/%3E%3Cstop offset='0.2387' style='stop-color:%2354897F'/%3E%3Cstop offset='0.2959' style='stop-color:%23407B70'/%3E%3Cstop offset='0.353' style='stop-color:%23347367'/%3E%3Cstop offset='0.4101' style='stop-color:%23307064'/%3E%3Cstop offset='1' style='stop-color:%23429F90'/%3E%3C/linearGradient%3E%3Cpolygon class='st1' points='-460.2419,1612.1549 -648.3007,1424.0962 198.9286,576.8653 575.9271,575.9858 575.9271,575.9877 -460.2379,1612.1549 '/%3E%3ClinearGradient id='SVGID_00000155848843947655122310000010685719756517031073_' gradientUnits='userSpaceOnUse' x1='-69.7066' y1='-369.6545' x2='-7.1457' y2='603.5153'%3E%3Cstop offset='0' style='stop-color:%23FFFFFF'/%3E%3Cstop offset='0.0537' style='stop-color:%23D2E8E5'/%3E%3Cstop offset='0.115' style='stop-color:%23A7D2CB'/%3E%3Cstop offset='0.1771' style='stop-color:%2382C0B6'/%3E%3Cstop offset='0.2392' style='stop-color:%2366B1A5'/%3E%3Cstop offset='0.3012' style='stop-color:%2352A799'/%3E%3Cstop offset='0.3632' style='stop-color:%2346A192'/%3E%3Cstop offset='0.4252' style='stop-color:%23429F90'/%3E%3Cstop offset='1' style='stop-color:%23307064'/%3E%3C/linearGradient%3E%3Cpolygon style='fill:url(%23SVGID_00000155848843947655122310000010685719756517031073_);' points='575.9279,575.8224 199.5543,575.5665 -648.3015,-272.288 -460.2408,-460.3467 -460.2388,-460.3467 575.9279,575.8184 '/%3E%3ClinearGradient id='SVGID_00000161594260009454186890000004335487650869549211_' gradientUnits='userSpaceOnUse' x1='224.6168' y1='61.7379' x2='1448.8446' y2='61.7379' gradientTransform='matrix(-1 0 0 1 2025.4928 -4)'%3E%3Cstop offset='0' style='stop-color:%23FFFFFF'/%3E%3Cstop offset='0.0104' style='stop-color:%23F5F8F7'/%3E%3Cstop offset='0.0668' style='stop-color:%23C1D4D1'/%3E%3Cstop offset='0.1242' style='stop-color:%2395B5AF'/%3E%3Cstop offset='0.1815' style='stop-color:%23709C94'/%3E%3Cstop offset='0.2387' style='stop-color:%2354897F'/%3E%3Cstop offset='0.2959' style='stop-color:%23407B70'/%3E%3Cstop offset='0.353' style='stop-color:%23347367'/%3E%3Cstop offset='0.4101' style='stop-color:%23307064'/%3E%3Cstop offset='1' style='stop-color:%23429F90'/%3E%3C/linearGradient%3E%3Cpolygon style='fill:url(%23SVGID_00000161594260009454186890000004335487650869549211_);' points='1612.8173,-460.3467 1800.876,-272.2879 953.6468,574.9429 576.6482,575.8224 576.6482,575.8205 1612.8134,-460.3467 '/%3E%3ClinearGradient id='SVGID_00000039107616807717138210000014412818165619705784_' gradientUnits='userSpaceOnUse' x1='1183.6555' y1='1491.5469' x2='1192.9238' y2='599.4745'%3E%3Cstop offset='0' style='stop-color:%23FFFFFF'/%3E%3Cstop offset='0.0537' style='stop-color:%23D2E8E5'/%3E%3Cstop offset='0.115' style='stop-color:%23A7D2CB'/%3E%3Cstop offset='0.1771' style='stop-color:%2382C0B6'/%3E%3Cstop offset='0.2392' style='stop-color:%2366B1A5'/%3E%3Cstop offset='0.3012' style='stop-color:%2352A799'/%3E%3Cstop offset='0.3632' style='stop-color:%2346A192'/%3E%3Cstop offset='0.4252' style='stop-color:%23429F90'/%3E%3Cstop offset='1' style='stop-color:%23307064'/%3E%3C/linearGradient%3E%3Cpolygon style='fill:url(%23SVGID_00000039107616807717138210000014412818165619705784_);' points='576.6474,575.9858 953.0211,576.2417 1800.8768,1424.0962 1612.816,1612.1549 1612.8142,1612.1549 576.6474,575.9897 '/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .teal-bg div {
@@ -814,6 +926,10 @@ Secondary Footer
 }
 
 @media only screen and (min-width: 992px) {
+    .teal-bg {
+        background-size: 54%;
+    } 
+
     .secondary-footer h2 {
         font-size: calc(1.35rem + 1vw);
     }
